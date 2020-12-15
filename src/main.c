@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olebedev <olebedev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 18:14:34 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/11 18:59:11 by olebedev         ###   ########.fr       */
+/*   Updated: 2020/12/15 19:15:05 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,24 @@ void	ft_print_map(t_map *map)
 	}
 }
 
+int		ft_init_mp_pr(t_map **map, t_person **person)
+{
+	if (!(*map = malloc(sizeof(t_map))))
+		return (0);
+	if (!(*person = malloc(sizeof(t_person))))
+		return (0);
+	ft_bzero((*map), sizeof(t_map));
+	(*map)->ft_width = -1;
+	(*map)->ft_height = -1;
+	(*map)->ft_floor = -1;
+	(*map)->ft_ceilling = -1;
+	(*map)->ft_map = NULL;
+	(*person)->x = -1;
+	(*person)->y = -1;
+	(*person)->ft_view = 0;
+	return (1);
+}
+
 int main(int argc, char const *argv[])
 {
 	(void)argc;
@@ -43,28 +61,18 @@ int main(int argc, char const *argv[])
 
 	error = 0;
 	i = 0;
-	if (!(ft_init_mp_pr(&map, &person)))
-		exit((-ft_error_massage("Malloc error\n", 13)));
+	if (!(ft_init_mp_pr(&map, &person)) || argc < 2 || argc > 3)
+		exit(0);
+	if (argc == 3)
+	{
+		if (ft_strncmp("--save",argv[2], 7))
+			exit(0);
+		
+	}
 	error = ft_parse_param(&i, map, argv[1]);
 	if (error == -1 || (error = ft_parse_map_full((i - map->ft_height_mp),
 	map, argv[1], person)) == -1)
-		return(ft_free_exit(map, person));//and free!!
-	// printf("%d\n", map->ft_height);
-	// printf("%d\n", map->ft_width);
-	// printf("%s\n", map->ft_north);
-	// printf("%s\n", map->ft_south);
-	// printf("%s\n", map->ft_west);
-	// printf("%s\n", map->ft_east);
-	// printf("%s\n", map->ft_t_sprite);
-	// printf("%d\n", map->ft_floor);
-	// printf("%d\n", map->ft_ceilling);
-	// printf("%lu\n", map->ft_height_mp);
-	// printf("%lu\n", map->ft_width_mp);
-	// printf("%lu\n", map->ft_size_arr_sp);
-	// printf("%d\n", person->x);
-	// printf("%d\n", person->y);
-	// printf("|%c|\n", person->ft_view);
-	// ft_print_map(map);
+		exit(0);
 	ft_mlx_init(map, person);
-	return (ft_free_exit(map, person));
+	return (0);
 }

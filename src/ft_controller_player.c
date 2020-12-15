@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_controller_player.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olebedev <olebedev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 16:05:22 by olebedev          #+#    #+#             */
-/*   Updated: 2020/12/11 19:00:32 by olebedev         ###   ########.fr       */
+/*   Updated: 2020/12/15 17:28:21 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_forward(t_game *game_prt)
 	ft_raycasting(game_prt);
 	mlx_put_image_to_window(game_prt->mlx, game_prt->mlx_win, game_prt->screen
 	.img, 0, 0);
+	mlx_do_sync(game_prt->mlx);
 }
 
 void	ft_back(t_game *game_prt)
@@ -43,6 +44,7 @@ void	ft_back(t_game *game_prt)
 	ft_raycasting(game_prt);
 	mlx_put_image_to_window(game_prt->mlx, game_prt->mlx_win, game_prt->screen
 	.img, 0, 0);
+	mlx_do_sync(game_prt->mlx);
 }
 
 void	ft_right(t_game *game_prt)
@@ -54,6 +56,7 @@ void	ft_right(t_game *game_prt)
 	ft_raycasting(game_prt);
 	mlx_put_image_to_window(game_prt->mlx, game_prt->mlx_win, game_prt->screen
 	.img, 0, 0);
+	mlx_do_sync(game_prt->mlx);
 }
 
 void	ft_left(t_game *game_prt)
@@ -65,4 +68,5 @@ void	ft_left(t_game *game_prt)
 	ft_raycasting(game_prt);
 	mlx_put_image_to_window(game_prt->mlx, game_prt->mlx_win, game_prt->screen
 	.img, 0, 0);
+	mlx_do_sync(game_prt->mlx);
 }

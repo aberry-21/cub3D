@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: olebedev <olebedev@student.42.fr>          +#+  +:+       +#+         #
+#    By: aberry <aberry@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 18:05:43 by aberry            #+#    #+#              #
-#    Updated: 2020/12/11 16:17:33 by olebedev         ###   ########.fr        #
+#    Updated: 2020/12/15 18:57:30 by aberry           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,6 @@ SRC_FILES = main.c \
 			ft_cub_parse.c \
 			ft_cub_parse_utils.c \
 			ft_cub_resolution_for_parse.c\
-			ft_support_utils.c\
 			ft_init_mlx.c\
 			ft_raycasting.c\
 			ft_rgbt.c\
@@ -49,8 +48,8 @@ all: lib $(NAME)
 lib:
 	@make -C $(LIBFT_DIR)
 $(NAME): $(LIBFT) $(OBJ_DIR) $(OBJ) $(HEAD)
-	@make -C mlx
-	@mv mlx/libmlx.a .
+	@make -C mlx_mms
+	@mv mlx_mms/libmlx.dylib .
 	@gcc -Wall -Werror -Wextra -L. -lmlx -framework OpenGL -framework Appkit $(LIBFT) $(OBJ) -o $(NAME)
 	@echo "\033[32m \tcompiled \t cub3D \t\t finish \033[0m"
 $(OBJ_DIR):
@@ -60,7 +59,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEAD)
 	@$(COMP) -c $< -o $@
 clean:
 	@$(MAKE) -sC $(LIBFT_DIR) clean
-	make -C mlx clean
+	make -C mlx_mms clean
 	@rm -rf $(OBJ_DIR)
 	@echo "\033[35m \tclean \t\t\t\t finish \033[0m"
 fclean: clean

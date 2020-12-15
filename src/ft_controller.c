@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_controller.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olebedev <olebedev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 16:14:41 by olebedev          #+#    #+#             */
-/*   Updated: 2020/12/11 18:58:32 by olebedev         ###   ########.fr       */
+/*   Updated: 2020/12/15 18:53:13 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_left_camera(t_game *game_prt)
 	ft_raycasting(game_prt);
 	mlx_put_image_to_window(game_prt->mlx, game_prt->mlx_win, game_prt->screen
 	.img, 0, 0);
+	mlx_do_sync(game_prt->mlx);
 }
 
 void	ft_right_camera(t_game *game_prt)
@@ -50,6 +51,7 @@ void	ft_right_camera(t_game *game_prt)
 	ft_raycasting(game_prt);
 	mlx_put_image_to_window(game_prt->mlx, game_prt->mlx_win, game_prt->screen
 	.img, 0, 0);
+	mlx_do_sync(game_prt->mlx);
 }
 
 int		ft_controller(int keycode, t_game *game_prt)
@@ -67,9 +69,6 @@ int		ft_controller(int keycode, t_game *game_prt)
 	if (keycode == 123)//<-
 		ft_left_camera(game_prt);
 	if (keycode == 53)//esc 
-	{
-		mlx_destroy_window(game_prt->mlx, game_prt->mlx_win);
 		exit(0);
-	}
 	return (0);
 }

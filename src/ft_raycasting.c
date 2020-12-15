@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_raycasting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olebedev <olebedev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 16:51:28 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/12 15:18:00 by olebedev         ###   ########.fr       */
+/*   Updated: 2020/12/15 18:53:28 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,10 +273,7 @@ void	ft_raycasting(t_game *game_prt)
 
 	x = 0;
 	if (!(prt.array_dist = malloc(sizeof(float) * game_prt->screen_width)))
-	{
-		ft_error_massage("Malloc error\n", 13);
-		return ;//free
-	}
+		exit (0);
 	while (x < game_prt->screen_width)
 	{
 		ft_init_raycasting(game_prt, &prt, x);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olebedev <olebedev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:43:29 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/12 18:03:51 by olebedev         ###   ########.fr       */
+/*   Updated: 2020/12/15 18:57:03 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include "../libft/libft.h"
-# include "../mlx/mlx.h"
+# include "../mlx_mms/mlx.h"
 #include <stdio.h>
 #include <fcntl.h>
 #include <math.h>
@@ -188,23 +188,13 @@ int		ft_parse_map_full(int j, t_map *map, const char *argv, t_person *person);
 **-----------------------------------------------------------------------------
 */
 
-/*
-** ft_support_utils.c
-*/
-int		ft_free_exit(t_map *map, t_person *person);
-void	ft_clear_int(t_map *map, t_person *person);
-int		ft_init_mp_pr(t_map **map, t_person **person);
-/*
-**-----------------------------------------------------------------------------
-*/
 
 /*
 ** ft_init_mlx.c
 */
-void	ft_mlx_init(t_map *parse_data, t_person *parse_person);
-void	ft_init_img(t_game *game_prt,t_map *parse_data, t_person *parse_person);
-void	ft_init_img_sprite(t_game *game_prt,t_map *parse_data,\
-t_person *parse_person);
+void 	ft_mlx_init(t_map *parse_data, t_person *parse_person);
+void	ft_init_img(t_game *game_prt,t_map *parse_data);
+void	ft_init_img_sprite(t_game *game_prt,t_map *parse_data);
 char	*ft_init_array_texture(int i, t_map *parse_data);
 void	ft_position_player(t_game *game_prt, t_person *parse_person);
 /*
