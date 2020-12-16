@@ -6,14 +6,14 @@
 #    By: aberry <aberry@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 18:05:43 by aberry            #+#    #+#              #
-#    Updated: 2020/12/15 18:57:30 by aberry           ###   ########.fr        #
+#    Updated: 2020/12/16 20:47:06 by aberry           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
 CC = gcc
-CFLAGS	= -g -Ofast -mprefer-vector-width=512 #-Wall -Wextra -Werror
+CFLAGS	= -g -Ofast -mprefer-vector-width=512 -Wall -Wextra -Werror
 
 COMP = $(CC) $(CFLAGS) $(INCLUDES)
 #libft connect
@@ -24,9 +24,9 @@ LIBFT = $(LIBFT_DIR)$(LIBFT_A)
 
 HEAD_DIR = include/
 CUB_H = -I $(HEAD_DIR)
-HEAD = $(HEAD_DIR)cub3D.h
+HEAD = $(HEAD_DIR)cub3d.h
 INCLUDES = $(LIBFT_H) $(CUB_H)
-SRC_DIR = src/
+SRC_DIR = src_bonus/
 SRC_FILES = main.c \
 			ft_check_map.c \
 			ft_parse_map.c \
@@ -40,7 +40,11 @@ SRC_FILES = main.c \
 			ft_rgbt.c\
 			ft_drawing.c\
 			ft_controller_player.c\
-			ft_controller.c
+			ft_controller.c\
+			ft_bmp_screen.c\
+			ft_init_mlx_utils.c\
+			ft_drawing_sprites.c\
+			ft_raycasting_utils.c
 OBJ_DIR = obj/
 OBJ_FILE =  $(SRC_FILES:.c=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILE))
@@ -50,7 +54,7 @@ lib:
 $(NAME): $(LIBFT) $(OBJ_DIR) $(OBJ) $(HEAD)
 	@make -C mlx_mms
 	@mv mlx_mms/libmlx.dylib .
-	@gcc -Wall -Werror -Wextra -L. -lmlx -framework OpenGL -framework Appkit $(LIBFT) $(OBJ) -o $(NAME)
+	@gcc $(CFLAGS) -L. -lmlx -framework OpenGL -framework Appkit $(LIBFT) $(OBJ) -o $(NAME)
 	@echo "\033[32m \tcompiled \t cub3D \t\t finish \033[0m"
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -59,13 +63,14 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEAD)
 	@$(COMP) -c $< -o $@
 clean:
 	@$(MAKE) -sC $(LIBFT_DIR) clean
-	make -C mlx_mms clean
+	@make -C mlx_mms clean
 	@rm -rf $(OBJ_DIR)
 	@echo "\033[35m \tclean \t\t\t\t finish \033[0m"
+	@rm -f ./Screenshot.bmp
 fclean: clean
 	@rm -f $(LIBFT_A)
 	@rm -f $(NAME)
-	#@rm -f libmlx.a
+	#@rm -f libmlx.dylib
 	@echo "\033[35m \tfclean \t\t\t\t finish \033[0m"
 	@echo	 "-----------------------------------------------"
 	@echo	 "                   /\_____/\                   "

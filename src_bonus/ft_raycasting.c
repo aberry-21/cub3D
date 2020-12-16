@@ -6,7 +6,7 @@
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 16:51:28 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 18:30:12 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/16 20:09:27 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	ft_raycasting(t_game *game_prt)
 		ft_calc_step(game_prt, &prt);
 		ft_dda_algorithm(game_prt, &prt);
 		ft_choose_tex(game_prt, &prt);
+		game_prt->screen.dark_cf = prt.dist_to_wall;
 		paint(game_prt, (int)(game_prt->screen_height / prt.dist_to_wall), x);
 		prt.array_dist[x] = prt.dist_to_wall;
 		x++;

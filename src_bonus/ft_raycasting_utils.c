@@ -1,38 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rgbt.c                                          :+:      :+:    :+:   */
+/*   ft_raycasting_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/09 19:12:04 by aberry            #+#    #+#             */
+/*   Created: 2020/12/16 17:20:06 by aberry            #+#    #+#             */
 /*   Updated: 2020/12/16 18:30:12 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-int		get_t(int trgb)
+void	ft_choose_tex(t_game *game_prt, t_raycast *prt)
 {
-	return (trgb & (0xFF << 24));
+	if (prt->side)
+		if (prt->map_x < game_prt->player.pos_x)
+			game_prt->num_tex = 0;
+		else
+			game_prt->num_tex = 1;
+	else if (prt->map_y < game_prt->player.pos_y)
+		game_prt->num_tex = 2;
+	else
+		game_prt->num_tex = 3;
 }
 
-int		get_r(int trgb)
+void	ft_swap_float(float *a, float *b)
 {
-	return (trgb & (0xFF << 16)) / (256 * 256);
+	float	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
-int		get_g(int trgb)
+void	ft_swap_int(size_t *a, size_t *b)
 {
-	return (trgb & (0xFF << 8)) / 256;
+	size_t	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
-int		get_b(int trgb)
+void	ft_set_color_sprite(unsigned int color, t_game *game_prt, int i, int j)
 {
-	return (trgb & (0xFF << 0));
-}
-
-int		get_trgb(int t, int r, int g, int b)
-{
-	return ((t << 24 | r << 16 | g << 8 | b));
+	if ((color & 0x00FFFFFF) != 0)
+		paint_pixel(&game_prt->screen, i, j, color);
 }
