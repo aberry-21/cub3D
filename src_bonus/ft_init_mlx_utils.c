@@ -6,7 +6,7 @@
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 17:07:57 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 18:41:06 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/17 20:31:09 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int		ft_close_window(int keycode, t_game *game_prt)
 {
 	(void)keycode;
 	(void)game_prt;
+	system ("killall afplay");
 	exit(0);
 	return (0);
 }

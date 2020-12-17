@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:43:29 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 19:12:42 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/17 20:29:22 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ typedef struct		s_game
 	size_t			*sprites_num;
 	size_t			num_sprite;
 	t_img			screen;
+	t_img			gun[2];
 	t_img			sky_texture;
 	t_img			sprite_texture;
 	t_img			wall_texture[4];
@@ -216,4 +217,5 @@ void				ft_choose_tex(t_game *game_prt, t_raycast *prt);
 void				ft_set_color_sprite(unsigned int color, t_game *game_prt,
 int i, int j);
 int					ft_close_window(int keycode, t_game *game_prt);
+void	ft_drawing_gun(t_game *game_prt, int index);
 #endif

@@ -6,7 +6,7 @@
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:13:38 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 20:46:31 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/17 17:24:43 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,16 @@ int line_height)
 	return (j);
 }
 
+int				ft_create_rgb(int color, float cf)
+{
+	int	rgb[4];
+	rgb[0] = color & 255;
+	rgb[1] = color >> 8 & 255;
+	rgb[2] = color >> 16 & 255;
+	rgb[3] = color >> 24 & 255;
+	return (ft_create_hex(rgb[3],rgb[2] / cf, rgb[1] / cf, rgb[0] / cf));
+}
+
 void			paint(t_game *game_prt, int line_height, int x)
 {
 	int				y;
@@ -79,6 +89,7 @@ void			paint(t_game *game_prt, int line_height, int x)
 
 	j = ft_start_end(&draw_start, &draw_end, game_prt, line_height);
 	y = 0;
+	float cf = 0.007 * game_prt->screen_height;
 	while (y < game_prt->screen_height)
 	{
 		if (y <= draw_start)
@@ -91,10 +102,10 @@ void			paint(t_game *game_prt, int line_height, int x)
 			wall_texture[game_prt->num_tex], (int)game_prt->wall_texture\
 			[game_prt->num_tex].img_width * game_prt->x_texture, (int)(j)));
 		}
-		if (game_prt->screen.dark_cf < 1)
-			game_prt->screen.dark_cf = 1;
+		if (y > game_prt->screen_height / 2)
+			cf -= 0.01;
 		if (y >= draw_end)
-			my_mlx_pixel_put(&game_prt->screen, x, y, game_prt->color_floor);
+			my_mlx_pixel_put(&game_prt->screen, x, y,ft_create_rgb(game_prt->color_floor, cf));
 		y++;
 	}
 }

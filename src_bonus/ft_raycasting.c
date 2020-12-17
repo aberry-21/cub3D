@@ -6,7 +6,7 @@
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 16:51:28 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 20:09:27 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/17 19:53:35 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,40 @@ void	ft_dda_algorithm(t_game *game_prt, t_raycast *prt)
 	ft_calc_dist(game_prt, prt);
 }
 
+
+void	ft_drawing_gun(t_game *game_prt, int index)
+{
+	int x = 0;
+	int y = 0;
+	
+	float w_proj = (float)game_prt->gun[index].img_width / (float)(game_prt->screen_width);
+	float h_proj = (float)game_prt->gun[index].img_height / (float)(game_prt->screen_height);
+	float j = 0;
+	float i = 0;
+	int color;
+	int proj_height = game_prt->screen_height / 2;
+	int proj_width = game_prt->screen_width / 2;
+	x = game_prt->screen_width - proj_width;
+	while (x < game_prt->screen_width)
+	{
+		y = game_prt->screen_height- proj_height;
+		w_proj = (float)game_prt->gun[index].img_width / (float)(proj_width);
+		j = 0;
+		while (y < game_prt->screen_height)
+		{
+			h_proj = (float)game_prt->gun[index].img_height / (float)(proj_height);
+			j += h_proj;
+			color = get_color(game_prt->gun[index], (int)(i), (int)(j));
+			if ((color & 0x00FFFFFF) != 0)
+				paint_pixel(&game_prt->screen, x, y, color);
+			y++;
+		}
+		i += w_proj;
+		x++;
+	}
+	
+}
+
 void	ft_raycasting(t_game *game_prt)
 {
 	int			x;
@@ -112,5 +146,7 @@ void	ft_raycasting(t_game *game_prt)
 		x++;
 	}
 	ft_drawing_sprites(game_prt, &prt);
+	game_prt->screen.dark_cf = 1;
+	ft_drawing_gun(game_prt, 0);
 	free(prt.array_dist);
 }
