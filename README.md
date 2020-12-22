@@ -4,6 +4,19 @@ My first RayCaster with miniLibX
 
 This project is inspired by the world-famous eponymous 90’s game, which
 was the first FPS ever.
+
+## Screens Bonus part screen
+<div style="display: inline-block;">
+<img width="500" alt="Screen Shot 2020-12-22 at 4 21 08 PM" src="https://user-images.githubusercontent.com/73585355/102893636-fb6b3600-4472-11eb-995c-3653641b0ab0.png">
+<img width="500" alt="Screen Shot 2020-12-22 at 4 20 51 PM" src="https://user-images.githubusercontent.com/73585355/102892993-cdd1bd00-4471-11eb-9a31-2eb26abb5027.png">
+</div>
+
+## Screens Mandatory part screen
+<div style="display: inline-block;">
+<img width="500" alt="Screen Shot 2020-12-22 at 4 27 05 PM" src="https://user-images.githubusercontent.com/73585355/102893381-8b5cb000-4472-11eb-81a6-be472d4cb022.png">
+<img width="500" alt="Screen Shot 2020-12-22 at 4 26 38 PM" src="https://user-images.githubusercontent.com/73585355/102893392-90216400-4472-11eb-9e56-82749be1b68d.png">
+</div>
+
 ## Warning! It was made for school 42 tasks
 
 It works only on 42-system macOS
@@ -65,6 +78,5 @@ You can shoot with `SPACE`. (Only bonus part)
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877932-8a1e8980-4458-11eb-8608-272be13be47c.jpg">
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877924-8854c600-4458-11eb-8d62-32c8598d2b9e.jpg">
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877925-88ed5c80-4458-11eb-9785-f1f0b5f76a49.jpg">
-<img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877932-8a1e8980-4458-11eb-8608-272be13be47c.jpg">
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877930-8a1e8980-4458-11eb-84e0-6c290afa7d65.jpg">
 </div>
