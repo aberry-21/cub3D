@@ -5,4 +5,4 @@ echo "================== CUB3D WORK ================="
 echo ""
 echo "================== CUB3D FINISH ==============="
 make clean
-echo "Screenshot creat!"
+echo "Screenshot create!"
