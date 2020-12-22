@@ -48,6 +48,7 @@ To exit the game, press `ESC` or click the red cross.
 You can shoot with `SPACE`. (Only bonus part)
 
 ## Preview textures
+<div style="display: inline-block;">
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877922-87bc2f80-4458-11eb-8e82-b4fe93d7505a.jpg">
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877926-8985f300-4458-11eb-90ef-8e231237c4ad.jpg">
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877929-8985f300-4458-11eb-882d-c7ddb029603e.jpg">
@@ -56,3 +57,4 @@ You can shoot with `SPACE`. (Only bonus part)
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877925-88ed5c80-4458-11eb-9785-f1f0b5f76a49.jpg">
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877932-8a1e8980-4458-11eb-8608-272be13be47c.jpg">
 <img width="100px" height="100px" src="https://user-images.githubusercontent.com/73585355/102877930-8a1e8980-4458-11eb-84e0-6c290afa7d65.jpg">
+</div>
