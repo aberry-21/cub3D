@@ -6,7 +6,7 @@ My first RayCaster with miniLibX
 This project is inspired by the world-famous eponymous 90’s game, which
 was the first FPS ever.
 ## Warning! It was made for school 42 tasks
-
+![21](https://user-images.githubusercontent.com/73585355/102891654-9feb7900-446f-11eb-8adb-ab1d71efe332.gif)\
 It works only on 42-system macOS
 
 [`Ecole 42 `](https://www.42.fr/)\
