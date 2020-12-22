@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_controller.c                                    :+:      :+:    :+:   */
+/*   ft_controller_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 16:14:41 by olebedev          #+#    #+#             */
-/*   Updated: 2020/12/17 20:30:56 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 16:40:03 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3d_bonus.h"
 
 void	ft_left_camera(t_game *game_prt)
 {
@@ -18,6 +18,7 @@ void	ft_left_camera(t_game *game_prt)
 	float old_plane_y;
 
 	old_dir_d = game_prt->player.dir_y;
+	game_prt->sky_offset -= 50;
 	game_prt->player.dir_y = game_prt->player.dir_y * cos(game_prt->player.
 	rot_speed) - game_prt->player.dir_x * sin(game_prt->player.rot_speed);
 	game_prt->player.dir_x = old_dir_d * sin(game_prt->player.rot_speed) +
@@ -39,6 +40,7 @@ void	ft_right_camera(t_game *game_prt)
 	float old_plane_y;
 
 	old_dir_d = game_prt->player.dir_y;
+	game_prt->sky_offset += 50;
 	game_prt->player.dir_y = game_prt->player.dir_y * cos(-game_prt->player.
 	rot_speed) - game_prt->player.dir_x * sin(-game_prt->player.rot_speed);
 	game_prt->player.dir_x = old_dir_d * sin(-game_prt->player.rot_speed) +
@@ -86,7 +88,7 @@ int		ft_controller(int keycode, t_game *game_prt)
 		ft_gun(game_prt);
 	if (keycode == 53)
 	{
-		system ("killall afplay");
+		system("killall afplay");
 		exit(0);
 	}
 	return (0);

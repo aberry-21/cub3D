@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:43:29 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/20 17:28:01 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 17:28:15 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include <stdarg.h>
 # include "../libft/libft.h"
@@ -114,9 +114,12 @@ typedef struct		s_game
 	size_t			*sprites_num;
 	size_t			num_sprite;
 	t_img			screen;
+	t_img			gun[2];
+	t_img			sky_texture;
 	t_img			sprite_texture;
 	t_img			wall_texture[4];
 	t_player		player;
+	float			sky_offset;
 	size_t			**map;
 }					t_game;
 
@@ -204,8 +207,8 @@ t_person *parse_person);
 void				ft_init_screen(t_game *game_prt, t_map *parse_data);
 void				ft_swap_float(float *a, float *b);
 void				ft_swap_int(size_t *a, size_t *b);
-void				ft_sort_sprites(size_t *num, float *dist, size_t
-size_array);
+void				ft_sort_sprites(size_t *num, float *dist,
+size_t size_array);
 void				ft_sprite_x(t_raycast_sprite *prt, t_game *game_prt);
 void				ft_sprites(t_raycast_sprite *prt, t_game *game_prt,
 t_raycast *prt_wall);
@@ -216,5 +219,11 @@ void				ft_choose_tex(t_game *game_prt, t_raycast *prt);
 void				ft_set_color_sprite(unsigned int color, t_game *game_prt,
 int i, int j);
 int					ft_close_window(int keycode, t_game *game_prt);
-
+void				ft_drawing_gun(t_game *game_prt, int index);
+void				paint_wall(t_game *game_prt, int x, int y, int j);
+int					ft_create_rgb(int color, float cf);
+void				ft_drawing_sky(t_game *game_prt, int x, int *y,
+int draw_start);
+void				ft_init_img_skybox(t_game *game_prt);
+void				ft_init_img_gun(t_game *game_prt);
 #endif

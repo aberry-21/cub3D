@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_mlx_utils.c                                :+:      :+:    :+:   */
+/*   ft_init_mlx_utils_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 17:07:57 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/17 20:31:09 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 17:23:39 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3d_bonus.h"
 
 void	ft_param_player(t_game *game_prt, t_person *parse_person)
 {
@@ -80,7 +80,7 @@ int		ft_close_window(int keycode, t_game *game_prt)
 {
 	(void)keycode;
 	(void)game_prt;
-	system ("killall afplay");
+	system("killall afplay");
 	exit(0);
 	return (0);
 }

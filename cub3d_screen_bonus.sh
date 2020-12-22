@@ -1,5 +1,5 @@
 echo "================== CUB3D MAKE ================="
-make
+make bonus
 echo "================== CUB3D WORK ================="
 ./cub3D map/map.cub --save
 echo ""

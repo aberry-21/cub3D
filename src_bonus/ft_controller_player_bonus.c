@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_controller_player.c                             :+:      :+:    :+:   */
+/*   ft_controller_player_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 16:05:22 by olebedev          #+#    #+#             */
-/*   Updated: 2020/12/16 18:30:12 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 15:57:25 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3d_bonus.h"
 
 int		ft_check_world_map(size_t prt)
 {

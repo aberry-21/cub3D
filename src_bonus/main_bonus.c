@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 18:14:34 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 18:30:12 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 18:13:37 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3d_bonus.h"
 
 void		ft_init_mp_pr(t_map **map, t_person **person)
 {
@@ -29,6 +29,24 @@ void		ft_init_mp_pr(t_map **map, t_person **person)
 	(*person)->ft_view = 0;
 }
 
+int			ft_valid_file(const char *str1)
+{
+	int		i;
+	char	*str2;
+	int		size;
+
+	i = 4;
+	size = ft_strlen(str1);
+	if ((size == 4 && str1[0] == '.') || ((size > 4) &&
+	(str1[size - 5] == '.' || str1[size - 5] == '/')))
+		return (1);
+	str2 = ".cub";
+	while (--i > -1 && --size)
+		if (str2[i] != str1[size] || !str2[i] || !str1[size])
+			return ((unsigned char)str1[i] - (unsigned char)str2[size]);
+	return (0);
+}
+
 int			main(int argc, char const *argv[])
 {
 	t_map		*map;
@@ -39,7 +57,7 @@ int			main(int argc, char const *argv[])
 	error = 0;
 	i = 0;
 	ft_init_mp_pr(&map, &person);
-	if (argc < 2 || argc > 3)
+	if (argc < 2 || argc > 3 || ft_valid_file(argv[1]))
 		ft_error_massage("No valid argc\n", 14);
 	if (argc == 3)
 	{

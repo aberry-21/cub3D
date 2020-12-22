@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bmp_screen.c                                    :+:      :+:    :+:   */
+/*   ft_bmp_screen_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 17:03:45 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 18:30:12 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 15:57:18 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3d_bonus.h"
 
 void	ft_creat_bmp_file_header(int fd, t_game *game_prt)
 {

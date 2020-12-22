@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cub_parse_utils.c                               :+:      :+:    :+:   */
+/*   ft_cub_parse_utils_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:19:36 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 18:30:12 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 15:57:33 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3d_bonus.h"
 
 int		ft_error_massage(char *str, int count)
 {

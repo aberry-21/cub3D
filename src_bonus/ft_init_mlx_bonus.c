@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_mlx.c                                      :+:      :+:    :+:   */
+/*   ft_init_mlx_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 18:04:02 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/17 20:32:14 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 17:28:35 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3d_bonus.h"
 
 char	*ft_init_array_texture(int i, t_map *parse_data)
 {
@@ -85,31 +85,6 @@ void	ft_init_sprites(t_game *game_prt, t_map *parse_data)
 	}
 }
 
-void	ft_init_img_gun(t_game *game_prt)
-{
-	if (!(game_prt->gun[1].img = mlx_xpm_file_to_image(
-	game_prt->mlx, "./textures/gun_fire.xpm",
-	&game_prt->gun[1].img_width,
-	&game_prt->gun[1].img_height)))
-		exit(0);
-	game_prt->gun[1].addr = mlx_get_data_addr(
-	game_prt->gun[1].img,
-	&game_prt->gun[1].bits_per_pixel,
-	&game_prt->gun[1].line_length,
-	&game_prt->gun[1].endian);
-	if (!(game_prt->gun[0].img = mlx_xpm_file_to_image(
-	game_prt->mlx, "./textures/gun_without_fire.xpm",
-	&game_prt->gun[0].img_width,
-	&game_prt->gun[0].img_height)))
-		exit(0);
-	game_prt->gun[0].addr = mlx_get_data_addr(
-	game_prt->gun[0].img,
-	&game_prt->gun[0].bits_per_pixel,
-	&game_prt->gun[0].line_length,
-	&game_prt->gun[0].endian);
-}
-
-
 void	ft_mlx_init(t_map *parse_data, t_person *parse_person)
 {
 	t_game	game_prt;
@@ -121,13 +96,14 @@ void	ft_mlx_init(t_map *parse_data, t_person *parse_person)
 	ft_init_sprites(&game_prt, parse_data);
 	ft_init_img(&game_prt, parse_data);
 	ft_init_img_gun(&game_prt);
+	ft_init_img_skybox(&game_prt);
 	ft_raycasting(&game_prt);
 	if (parse_data->bmp_bool)
 		ft_creat_bmp(&game_prt);
 	if (!(game_prt.mlx_win = mlx_new_window(game_prt.mlx, game_prt.screen_width,
 	game_prt.screen_height, "Cub3D")))
 		exit(0);
-	system("afplay ./music/hyper-spoiler.mp3 -v 0.05 & ");
+	system("afplay ./music/hyper-spoiler.mp3 -v 0.2 & ");
 	mlx_put_image_to_window(game_prt.mlx, game_prt.mlx_win,
 	game_prt.screen.img, 0, 0);
 	mlx_hook(game_prt.mlx_win, 2, 1L << 0, ft_controller, &game_prt);

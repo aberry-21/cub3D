@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_drawing_sprites.c                               :+:      :+:    :+:   */
+/*   ft_drawing_sprites_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberry <aberry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 17:18:14 by aberry            #+#    #+#             */
-/*   Updated: 2020/12/16 20:05:49 by aberry           ###   ########.fr       */
+/*   Updated: 2020/12/20 15:57:42 by aberry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3d_bonus.h"
 
 void	ft_sort_sprites(size_t *num, float *dist, size_t size_array)
 {
