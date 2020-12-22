@@ -5,13 +5,13 @@ My first RayCaster with miniLibX
 This project is inspired by the world-famous eponymous 90’s game, which
 was the first FPS ever.
 
-## Screens Bonus part screen
+## Screens Bonus part
 <div style="display: inline-block;">
 <img width="400" alt="Screen Shot 2020-12-22 at 4 21 08 PM" src="https://user-images.githubusercontent.com/73585355/102893636-fb6b3600-4472-11eb-995c-3653641b0ab0.png">
 <img width="400" alt="Screen Shot 2020-12-22 at 4 20 51 PM" src="https://user-images.githubusercontent.com/73585355/102892993-cdd1bd00-4471-11eb-9a31-2eb26abb5027.png">
 </div>
 
-## Screens Mandatory part screen
+## Screens Mandatory part
 <div style="display: inline-block;">
 <img width="400" alt="Screen Shot 2020-12-22 at 4 27 05 PM" src="https://user-images.githubusercontent.com/73585355/102893381-8b5cb000-4472-11eb-81a6-be472d4cb022.png">
 <img width="400" alt="Screen Shot 2020-12-22 at 4 26 38 PM" src="https://user-images.githubusercontent.com/73585355/102893392-90216400-4472-11eb-9e56-82749be1b68d.png">
