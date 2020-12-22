@@ -7,8 +7,8 @@ was the first FPS ever.
 
 ## Screens Bonus part screen
 <div style="display: inline-block;">
-<img width="350" alt="Screen Shot 2020-12-22 at 4 21 08 PM" src="https://user-images.githubusercontent.com/73585355/102893636-fb6b3600-4472-11eb-995c-3653641b0ab0.png">
-<img width="350" alt="Screen Shot 2020-12-22 at 4 20 51 PM" src="https://user-images.githubusercontent.com/73585355/102892993-cdd1bd00-4471-11eb-9a31-2eb26abb5027.png">
+<img width="385" alt="Screen Shot 2020-12-22 at 4 21 08 PM" src="https://user-images.githubusercontent.com/73585355/102893636-fb6b3600-4472-11eb-995c-3653641b0ab0.png">
+<img width="385" alt="Screen Shot 2020-12-22 at 4 20 51 PM" src="https://user-images.githubusercontent.com/73585355/102892993-cdd1bd00-4471-11eb-9a31-2eb26abb5027.png">
 </div>
 
 ## Screens Mandatory part screen
