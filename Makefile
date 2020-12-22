@@ -6,7 +6,7 @@
 #    By: aberry <aberry@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 18:05:43 by aberry            #+#    #+#              #
-#    Updated: 2020/12/20 18:47:38 by aberry           ###   ########.fr        #
+#    Updated: 2020/12/22 12:54:06 by aberry           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,6 +107,7 @@ clean:
 	@echo "\033[35m \tclean \t\t\t\t finish \033[0m"
 	@rm -f ./Screenshot.bmp
 fclean: clean
+	@$(MAKE) -sC $(LIBFT_DIR) fclean
 	@rm -f $(LIBFT_A)
 	@rm -f $(NAME)
 	@rm -f libmlx.dylib
