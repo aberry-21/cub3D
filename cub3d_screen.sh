@@ -4,4 +4,5 @@ echo "================== CUB3D WORK ================="
 ./cub3D map/map.cub --save
 echo ""
 echo "================== CUB3D FINISH ==============="
-# make fclean
+make clean
+echo "Screenshot creat!"

@@ -6,13 +6,13 @@
 #    By: aberry <aberry@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 18:05:43 by aberry            #+#    #+#              #
-#    Updated: 2020/12/20 19:57:42 by aberry           ###   ########.fr        #
+#    Updated: 2020/12/20 18:47:38 by aberry           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 CC = gcc
-CFLAGS	= -Ofast -mprefer-vector-width=512 -Wall -Wextra -Werror
+CFLAGS	= -g -Ofast -mprefer-vector-width=512 -Wall -Wextra -Werror
 COMP = $(CC) $(CFLAGS) $(INCLUDES)
 #libft connect
 LIBFT_DIR = libft/
